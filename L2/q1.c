@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
 #include <sys/wait.h>
+#include <unistd.h>
 
 /*
  * CMPT360 Lab 2
@@ -53,7 +53,6 @@ int main(int argc, char *argv[])
 		x = 921;
 		printf("The Parent process has a new 'x' value of: %d\n", x);
 	}
-
 
 	return 0;
 }

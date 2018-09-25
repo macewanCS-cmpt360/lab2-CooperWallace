@@ -1,9 +1,9 @@
+#include <fcntl.h>
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-#include <fcntl.h>
 #include <sys/wait.h>
+#include <unistd.h>
 
 /*
  * CMPT360 Lab 2
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	 * by both the Parent and Child process. Both the Child and
 	 * the Parent will write to the file 50 times.
 	 */
-	int fd = open("test.out", O_CREAT|O_WRONLY, 0700);
+	int fd = open("test.out", O_CREAT | O_WRONLY, 0700);
 	char process_name[128];
 	int rc = fork();
 

@@ -1,9 +1,9 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
-#include <stdbool.h>
 #include <sys/wait.h>
+#include <unistd.h>
 
 /*
  * CMPT360 Lab 2
@@ -22,7 +22,6 @@ int main(void)
 	// Flag for waiting until execution is complete.
 	int wait_exec;
 
-
 	while (true) {
 		cmdline = calloc(1, 1024);
 		wait_exec = false;
@@ -33,7 +32,7 @@ int main(void)
 
 		token = strtok(cmdline, "\n ");
 		while (token != NULL) {
-			//printf("%s\n", token);
+			// printf("%s\n", token);
 			args[i++] = strdup(token);
 			token = strtok(NULL, "\n ");
 		}
@@ -41,8 +40,8 @@ int main(void)
 
 		// Check if last argument is an ampersand, specifying that
 		// the command is to be put in background
-		if (strlen(args[i-1]) == 1 && args[i-1][0] == '&') {
-			args[i-1] = NULL;
+		if (strlen(args[i - 1]) == 1 && args[i - 1][0] == '&') {
+			args[i - 1] = NULL;
 			wait_exec = true;
 		}
 
@@ -65,5 +64,3 @@ int main(void)
 
 	return 0;
 }
-
-
