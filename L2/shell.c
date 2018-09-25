@@ -39,7 +39,8 @@ int main(void)
 		}
 		args[i] = NULL;
 
-		// Check if command is to be put in background
+		// Check if last argument is an ampersand, specifying that
+		// the command is to be put in background
 		if (strlen(args[i-1]) == 1 && args[i-1][0] == '&') {
 			args[i-1] = NULL;
 			wait_exec = true;
